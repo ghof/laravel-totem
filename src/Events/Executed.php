@@ -29,7 +29,10 @@ class Executed extends BroadcastingEvent
 
             unlink(storage_path($task->getMutexName()));
 
-            $task->notify(new TaskCompleted($output));
+            if($output != ""){
+                $task->notify(new TaskCompleted($output));
+            }
+            
             $task->autoCleanup();
         }
     }
