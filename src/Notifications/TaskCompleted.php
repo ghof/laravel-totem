@@ -2,18 +2,14 @@
 
 namespace Studio\Totem\Notifications;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
 
-class TaskCompleted extends Notification implements ShouldQueue
+class TaskCompleted extends Notification
 {
-    use Queueable;
-
     /**
      * @var
      */
