@@ -30,7 +30,7 @@ class Executed extends BroadcastingEvent
             unlink(storage_path($task->getMutexName()));
 
             if($output != ""){
-                $task->notify((new TaskCompleted($output))->onQueue(config('totem.queue_name','TaskCompleted')));
+                $task->notify(new TaskCompleted($output));
             }
             
             $task->autoCleanup();
